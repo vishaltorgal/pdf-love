@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6ZGPZNMYW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N6ZGPZNMYW');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>PDF Love | Merge PDF Online - Free, Fast & Secure</title>
     <meta name="description" content="Merge PDF files with a simple drag and drop. PDF Love is a secure, browser-based tool to combine PDFs without server uploads. 100% private and free.">
-    <meta name="keywords" content="merge pdf, drag and drop pdf merge, combine pdf online, pdf love">
-    <link rel="canonical" href="https://yourdomain.com/" />
+    <meta name="keywords" content="merge pdf, drag and drop pdf merge, combine pdf online, pdf love, merge pdf free">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PDF Love",
+      "operatingSystem": "Any",
+      "applicationCategory": "MultimediaApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": "Merge PDF, Combine PDF, Browser-side processing, Privacy-focused"
+    }
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
@@ -25,10 +44,10 @@
         body { font-family: 'Inter', sans-serif; background: #fffcfc; color: var(--dark); line-height: 1.6; }
 
         .nav { padding: 20px; text-align: center; background: white; border-bottom: 1px solid var(--gray); }
-        .logo { font-weight: 800; font-size: 2rem; color: var(--love); text-decoration: none; }
+        .logo { font-weight: 800; font-size: 2.2rem; color: var(--love); text-decoration: none; }
 
         .hero { padding: 40px 20px; text-align: center; }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
 
         .container { 
             max-width: 600px; 
@@ -36,12 +55,11 @@
             background: white; 
             padding: 30px; 
             border-radius: 24px; 
-            box-shadow: 0 15px 35px rgba(255, 75, 92, 0.08); 
+            box-shadow: 0 15px 35px rgba(255, 75, 92, 0.1); 
             text-align: center; 
             transition: all 0.3s ease;
         }
 
-        /* Drag and Drop Visual States */
         .container.drag-over {
             transform: scale(1.02);
             border: 2px solid var(--love);
@@ -56,7 +74,7 @@
             cursor: pointer;
         }
         
-        .btn-select { background: var(--love); color: white; padding: 14px 28px; border-radius: 50px; font-weight: 700; cursor: pointer; display: inline-block; margin-bottom: 15px; border: none; }
+        .btn-select { background: var(--love); color: white; padding: 14px 28px; border-radius: 50px; font-weight: 700; cursor: pointer; display: inline-block; margin-bottom: 15px; border: none; font-size: 1rem; }
         
         #fileInput { display: none; }
 
@@ -74,13 +92,17 @@
         .btn-delete { 
             background: #ffe0e3; color: var(--love); border: none; 
             width: 32px; height: 32px; border-radius: 50%; 
-            cursor: pointer; font-weight: bold;
+            cursor: pointer; font-weight: bold; font-size: 1.2rem;
         }
 
-        .btn-merge { background: var(--dark); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: 700; cursor: pointer; display: none; width: 100%; margin-top: 20px; }
-        .btn-download { background: var(--success); color: white; text-decoration: none; padding: 16px; border-radius: 12px; font-weight: 700; display: none; width: 100%; text-align: center; margin-top: 20px; }
+        .btn-merge { background: var(--dark); color: white; border: none; padding: 18px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: none; width: 100%; margin-top: 20px; }
+        .btn-download { background: var(--success); color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: 700; display: none; width: 100%; text-align: center; margin-top: 20px; font-size: 1.1rem; }
 
-        footer { padding: 40px; text-align: center; color: #bbb; font-size: 0.8rem; }
+        .seo-section { max-width: 600px; margin: 40px auto; padding: 20px; }
+        .seo-section h2 { color: var(--love); margin-bottom: 10px; }
+        .seo-section p { color: #636e72; font-size: 0.95rem; margin-bottom: 15px; }
+
+        footer { padding: 40px; text-align: center; color: #b2bec3; font-size: 0.85rem; border-top: 1px solid var(--gray); margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -88,15 +110,15 @@
     <nav class="nav"><a href="#" class="logo">❤️ PDF Love</a></nav>
 
     <header class="hero">
-        <h1>Drag, Drop & Merge</h1>
-        <p>Combine your PDF files locally and securely.</p>
+        <h1>Merge PDF Files</h1>
+        <p>Combine multiple PDFs into one document securely in your browser.</p>
     </header>
 
     <main class="container" id="mainContainer">
         <div class="drop-zone" id="dropZone">
             <label for="fileInput" class="btn-select">Select or Drop PDFs</label>
             <input type="file" id="fileInput" accept=".pdf" multiple>
-            <p id="status-text" style="font-size: 0.85rem; color: #888;">Drag your files here or click to browse</p>
+            <p id="status-text" style="font-size: 0.85rem; color: #888;">Drag files here to add them one by one</p>
             
             <div id="file-display-area" class="file-list"></div>
 
@@ -105,10 +127,13 @@
         </div>
     </main>
 
-    <footer style="margin-top:20px;">
-        <p><strong>Privacy Note:</strong> Files never leave your browser. Processing is 100% local.</p>
-        <br>
-        &copy; 2026 PDF Love | All Rights Reserved.
+    <article class="seo-section">
+        <h2>Private & Secure PDF Merger</h2>
+        <p>PDF Love uses advanced client-side merging. Your files stay on your device and are never uploaded to any server. It's the most secure way to manage sensitive documents.</p>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 PDF Love | All files processed locally for maximum privacy.</p>
     </footer>
 
     <script>
@@ -122,13 +147,8 @@
 
         // Drag and Drop Event Listeners
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            mainContainer.addEventListener(eventName, preventDefaults, false);
+            mainContainer.addEventListener(eventName, e => { e.preventDefault(); e.stopPropagation(); }, false);
         });
-
-        function preventDefaults(e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
 
         ['dragenter', 'dragover'].forEach(eventName => {
             mainContainer.addEventListener(eventName, () => mainContainer.classList.add('drag-over'), false);
@@ -138,18 +158,14 @@
             mainContainer.addEventListener(eventName, () => mainContainer.classList.remove('drag-over'), false);
         });
 
-        mainContainer.addEventListener('drop', handleDrop, false);
-
-        function handleDrop(e) {
-            const dt = e.dataTransfer;
-            const files = Array.from(dt.files).filter(file => file.type === "application/pdf");
+        mainContainer.addEventListener('drop', e => {
+            const files = Array.from(e.dataTransfer.files).filter(f => f.type === "application/pdf");
             if(files.length > 0) {
                 selectedFiles = [...selectedFiles, ...files];
                 updateUI();
             }
-        }
+        });
 
-        // Standard File Selection
         fileInput.addEventListener('change', (e) => {
             const newFiles = Array.from(e.target.files);
             selectedFiles = [...selectedFiles, ...newFiles];
@@ -183,14 +199,14 @@
             } else {
                 mergeBtn.style.display = 'none';
                 statusText.style.color = "#888";
-                statusText.innerText = selectedFiles.length === 1 ? "Drop 1 more file" : "Drag & Drop at least 2 files";
+                statusText.innerText = selectedFiles.length === 1 ? "Add 1 more file to merge" : "Select or Drop at least 2 files";
             }
             downloadBtn.style.display = 'none';
         }
 
         async function mergePdfs() {
             try {
-                mergeBtn.innerText = "Merging locally...";
+                mergeBtn.innerText = "Processing...";
                 mergeBtn.disabled = true;
 
                 const mergedPdf = await PDFLib.PDFDocument.create();
@@ -208,8 +224,13 @@
                 downloadBtn.style.display = 'block';
                 mergeBtn.style.display = 'none';
                 statusText.innerHTML = "✨ <strong>Success! Download below:</strong>";
+
+                // Track Event in Analytics
+                if(typeof gtag === 'function') {
+                    gtag('event', 'pdf_merge_success', { 'file_count': selectedFiles.length });
+                }
             } catch (err) {
-                alert("Error: One of your PDFs might be corrupted or protected.");
+                alert("Error: One of your files might be protected.");
                 mergeBtn.innerText = "Merge Files Now";
                 mergeBtn.disabled = false;
             }
