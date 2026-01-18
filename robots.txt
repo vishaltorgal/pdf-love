@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vishaltorgal.github.io/pdf-love/sitemap.xml
